@@ -1,22 +1,13 @@
 document.addEventListener('DOMContentLoaded', async () => {
-    const loaderBar = document.getElementById('loader-tech-bar');
-    const welcomeSubtitle = document.querySelector('.welcome-subtitle-scramble');
-    const welcomeScreen = document.getElementById('welcome-animation');
-    const disclaimerModal = document.getElementById('disclaimer-modal');
-    const acceptDisclaimerBtn = document.getElementById('accept-disclaimer');
-
-    const updateLoader = (text, width) => {
-        if (welcomeSubtitle) welcomeSubtitle.textContent = text;
-        if (loaderBar) loaderBar.style.width = width;
-    };
-
-    const hideWelcomeScreen = () => {
-        if (!welcomeScreen) return;
-        welcomeScreen.classList.add('hidden');
-        setTimeout(() => {
-            welcomeScreen.style.display = 'none';
-        }, 800);
-    };
+    // 直接隐藏欢迎动画和免责声明，不走任何逻辑
+    const welcome = document.getElementById('welcome-animation');
+    const disclaimer = document.getElementById('disclaimer-modal');
+    
+    if (welcome) welcome.style.display = 'none';
+    if (disclaimer) disclaimer.style.display = 'none';
+    
+    console.log("Yu-Rafayel's site: Clear and Ready.");
+});
 
     const safeAwait = async (promise, fallback = null) => {
         try {
